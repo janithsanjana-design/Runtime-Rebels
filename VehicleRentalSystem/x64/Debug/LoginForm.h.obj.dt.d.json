@@ -1,0 +1,13 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\users\\sanja\\onedrive\\desktop\\vehiclerentalsystemcpp\\vehiclerentalsystem\\loginform.h",
+        "ProvidedModule": "",
+        "Includes": [
+            "c:\\users\\sanja\\onedrive\\desktop\\vehiclerentalsystemcpp\\vehiclerentalsystem\\uitheme.h",
+            "c:\\users\\sanja\\onedrive\\desktop\\vehiclerentalsystemcpp\\vehiclerentalsystem\\authservice.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

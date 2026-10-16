@@ -1,0 +1,15 @@
+﻿  Booking.cpp
+  BookingService.cpp
+  CommissionCalculator.cpp
+  Db.cpp
+  Person.cpp
+  Repositories.cpp
+  ReportService.cpp
+  SampleData.cpp
+  UiTheme.cpp
+  Vehicle.cpp
+  VehicleRentalSystem.cpp
+  .NETFramework,Version=v4.8.AssemblyAttributes.cpp
+  Generating Code...
+  Booking.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
+  VehicleRentalSystem.vcxproj -> C:\Users\sanja\OneDrive\Desktop\VehicleRentalSystemCpp\x64\Release\VehicleRentalSystem.exe

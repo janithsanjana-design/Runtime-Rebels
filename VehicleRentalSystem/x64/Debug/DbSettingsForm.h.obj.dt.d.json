@@ -1,0 +1,19 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\users\\sanja\\onedrive\\desktop\\vehiclerentalsystemcpp\\vehiclerentalsystem\\dbsettingsform.h",
+        "ProvidedModule": "",
+        "Includes": [
+            "c:\\users\\sanja\\onedrive\\desktop\\vehiclerentalsystemcpp\\vehiclerentalsystem\\db.h",
+            "c:\\users\\sanja\\onedrive\\desktop\\vehiclerentalsystemcpp\\vehiclerentalsystem\\vehicle.h",
+            "c:\\users\\sanja\\onedrive\\desktop\\vehiclerentalsystemcpp\\vehiclerentalsystem\\enums.h",
+            "c:\\users\\sanja\\onedrive\\desktop\\vehiclerentalsystemcpp\\vehiclerentalsystem\\ientity.h",
+            "c:\\users\\sanja\\onedrive\\desktop\\vehiclerentalsystemcpp\\vehiclerentalsystem\\person.h",
+            "c:\\users\\sanja\\onedrive\\desktop\\vehiclerentalsystemcpp\\vehiclerentalsystem\\booking.h",
+            "c:\\users\\sanja\\onedrive\\desktop\\vehiclerentalsystemcpp\\vehiclerentalsystem\\irepository.h",
+            "c:\\users\\sanja\\onedrive\\desktop\\vehiclerentalsystemcpp\\vehiclerentalsystem\\uitheme.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

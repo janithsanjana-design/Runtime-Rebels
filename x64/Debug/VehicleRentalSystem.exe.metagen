@@ -1,0 +1,473 @@
+  VehicleRentalSystem.DashboardForm.resources - Embedded, ContainedInManifestFile, 
+  VehicleRentalSystem.DbSettingsForm.resources - Embedded, ContainedInManifestFile, 
+  VehicleRentalSystem.DriverForm.resources - Embedded, ContainedInManifestFile, 
+  VehicleRentalSystem.HireForm.resources - Embedded, ContainedInManifestFile, 
+  VehicleRentalSystem.LoginForm.resources - Embedded, ContainedInManifestFile, 
+  VehicleRentalSystem.MainForm.resources - Embedded, ContainedInManifestFile, 
+  VehicleRentalSystem.ReceiptForm.resources - Embedded, ContainedInManifestFile, 
+  VehicleRentalSystem.VehicleForm.resources - Embedded, ContainedInManifestFile, 
+ImageRuntimeVersion: v4.0.30319
+Assembly VehicleRentalSystem, Version=0.0.*, Culture=Invariant Language (Invariant Country): 
+	hash=SHA1, flags=PublicKey
+Assembly mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly MySql.Data, Version=8.0.30.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d: 
+	hash=None, flags=None
+Assembly System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a: 
+	hash=None, flags=None
+Assembly System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Interface VehicleRentalSystem.IEntity: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract, BeforeFieldInit
+  Properties:
+    Int32 Id   'get set' : 
+  Methods:
+    get_Id(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_Id(Int32): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+Class VehicleRentalSystem.Person: AutoLayout, AnsiClass, Class, Public, Abstract, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    System.String Address 'get set' : 
+    System.String Phone 'get set' : 
+    System.String Nic 'get set' : 
+    System.String Name 'get set' : 
+  Methods:
+    get_Name(): PrivateScope, Public, HideBySig, SpecialName
+    set_Name(String): PrivateScope, Public, HideBySig, SpecialName
+    get_Nic(): PrivateScope, Public, HideBySig, SpecialName
+    set_Nic(String): PrivateScope, Public, HideBySig, SpecialName
+    get_Phone(): PrivateScope, Public, HideBySig, SpecialName
+    set_Phone(String): PrivateScope, Public, HideBySig, SpecialName
+    get_Address(): PrivateScope, Public, HideBySig, SpecialName
+    set_Address(String): PrivateScope, Public, HideBySig, SpecialName
+    GetRole(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+Class VehicleRentalSystem.Owner: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :VehicleRentalSystem.Person
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    System.String BankAccount 'get set' : 
+  Methods:
+    get_BankAccount(): PrivateScope, Public, HideBySig, SpecialName
+    set_BankAccount(String): PrivateScope, Public, HideBySig, SpecialName
+    GetRole(): PrivateScope, Public, Virtual, HideBySig
+Class VehicleRentalSystem.Customer: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :VehicleRentalSystem.Person
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    GetRole(): PrivateScope, Public, Virtual, HideBySig
+Class VehicleRentalSystem.Driver: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :VehicleRentalSystem.Person
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    VehicleRentalSystem.IEntity
+  Properties:
+    Boolean IsBusy 'get set' : 
+    System.Decimal DailyCharge 'get set' : 
+    System.DateTime LicenceExpiry 'get set' : 
+    System.String LicenceNumber 'get set' : 
+    Int32 Id   'get set' : 
+  Methods:
+    get_Id(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_Id(Int32): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_LicenceNumber(): PrivateScope, Public, HideBySig, SpecialName
+    set_LicenceNumber(String): PrivateScope, Public, HideBySig, SpecialName
+    get_LicenceExpiry(): PrivateScope, Public, HideBySig, SpecialName
+    set_LicenceExpiry(DateTime): PrivateScope, Public, HideBySig, SpecialName
+    get_DailyCharge(): PrivateScope, Public, HideBySig, SpecialName
+    set_DailyCharge(Decimal): PrivateScope, Public, HideBySig, SpecialName
+    get_IsBusy(): PrivateScope, Public, HideBySig, SpecialName
+    set_IsBusy(Boolean(HasFieldMarshal)): PrivateScope, Public, HideBySig, SpecialName
+    GetRole(): PrivateScope, Public, Virtual, HideBySig
+Class VehicleRentalSystem.Booking: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    VehicleRentalSystem.IEntity
+  Properties:
+    System.Decimal OwnerShare 'get ' : 
+    System.Decimal CompanyCommission 'get ' : 
+    System.Decimal Balance 'get ' : 
+    System.Decimal Total 'get ' : 
+    System.DateTime CreatedOn 'get set' : 
+    VehicleRentalSystem.BookingStatus Status 'get set' : 
+    System.Decimal Advance 'get set' : 
+    System.Decimal DriverCost 'get set' : 
+    System.Decimal VehicleCost 'get set' : 
+    System.Decimal DriverDailyCharge 'get set' : 
+    System.Decimal VehicleDailyRate 'get set' : 
+    Int32 Days 'get set' : 
+    System.DateTime ToDate 'get set' : 
+    System.DateTime FromDate 'get set' : 
+    System.String DriverName 'get set' : 
+    Int32 DriverId 'get set' : 
+    System.String VehicleName 'get set' : 
+    Int32 VehicleId 'get set' : 
+    VehicleRentalSystem.Customer CustomerInfo 'get set' : 
+    Int32 Id   'get set' : 
+  Methods:
+    get_Id(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_Id(Int32): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_CustomerInfo(): PrivateScope, Public, HideBySig, SpecialName
+    set_CustomerInfo(Customer): PrivateScope, Public, HideBySig, SpecialName
+    get_VehicleId(): PrivateScope, Public, HideBySig, SpecialName
+    set_VehicleId(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_VehicleName(): PrivateScope, Public, HideBySig, SpecialName
+    set_VehicleName(String): PrivateScope, Public, HideBySig, SpecialName
+    get_DriverId(): PrivateScope, Public, HideBySig, SpecialName
+    set_DriverId(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_DriverName(): PrivateScope, Public, HideBySig, SpecialName
+    set_DriverName(String): PrivateScope, Public, HideBySig, SpecialName
+    get_FromDate(): PrivateScope, Public, HideBySig, SpecialName
+    set_FromDate(DateTime): PrivateScope, Public, HideBySig, SpecialName
+    get_ToDate(): PrivateScope, Public, HideBySig, SpecialName
+    set_ToDate(DateTime): PrivateScope, Public, HideBySig, SpecialName
+    get_Days(): PrivateScope, Public, HideBySig, SpecialName
+    set_Days(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_VehicleDailyRate(): PrivateScope, Public, HideBySig, SpecialName
+    set_VehicleDailyRate(Decimal): PrivateScope, Public, HideBySig, SpecialName
+    get_DriverDailyCharge(): PrivateScope, Public, HideBySig, SpecialName
+    set_DriverDailyCharge(Decimal): PrivateScope, Public, HideBySig, SpecialName
+    get_VehicleCost(): PrivateScope, Public, HideBySig, SpecialName
+    set_VehicleCost(Decimal): PrivateScope, Public, HideBySig, SpecialName
+    get_DriverCost(): PrivateScope, Public, HideBySig, SpecialName
+    set_DriverCost(Decimal): PrivateScope, Public, HideBySig, SpecialName
+    get_Advance(): PrivateScope, Public, HideBySig, SpecialName
+    set_Advance(Decimal): PrivateScope, Public, HideBySig, SpecialName
+    get_Status(): PrivateScope, Public, HideBySig, SpecialName
+    set_Status(BookingStatus): PrivateScope, Public, HideBySig, SpecialName
+    get_CreatedOn(): PrivateScope, Public, HideBySig, SpecialName
+    set_CreatedOn(DateTime): PrivateScope, Public, HideBySig, SpecialName
+    get_Total(): PrivateScope, Public, HideBySig, SpecialName
+    get_Balance(): PrivateScope, Public, HideBySig, SpecialName
+    get_CompanyCommission(): PrivateScope, Public, HideBySig, SpecialName
+    get_OwnerShare(): PrivateScope, Public, HideBySig, SpecialName
+Class VehicleRentalSystem.CommissionCalculator: AutoLayout, AnsiClass, Class, Public, Abstract, Sealed, BeforeFieldInit
+  Properties:
+    System.Decimal Rate 'get ' : 
+  Methods:
+    get_Rate(): PrivateScope, Public, Static, HideBySig, SpecialName
+    CustomerPrice(Decimal): PrivateScope, Public, Static, HideBySig
+    Commission(Decimal): PrivateScope, Public, Static, HideBySig
+Struct VehicleRentalSystem.VehicleType: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    VehicleRentalSystem.VehicleType Car = 0 : Public, Static, Literal, HasDefault
+    VehicleRentalSystem.VehicleType Van = 1 : Public, Static, Literal, HasDefault
+    VehicleRentalSystem.VehicleType SUV = 2 : Public, Static, Literal, HasDefault
+    VehicleRentalSystem.VehicleType Bike = 3 : Public, Static, Literal, HasDefault
+    VehicleRentalSystem.VehicleType Bus = 4 : Public, Static, Literal, HasDefault
+Struct VehicleRentalSystem.VehicleStatus: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    VehicleRentalSystem.VehicleStatus Available = 0 : Public, Static, Literal, HasDefault
+    VehicleRentalSystem.VehicleStatus Rented = 1 : Public, Static, Literal, HasDefault
+Struct VehicleRentalSystem.BookingStatus: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    VehicleRentalSystem.BookingStatus Active = 0 : Public, Static, Literal, HasDefault
+    VehicleRentalSystem.BookingStatus Completed = 1 : Public, Static, Literal, HasDefault
+Class VehicleRentalSystem.Vehicle: AutoLayout, AnsiClass, Class, Public, Abstract, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    VehicleRentalSystem.IEntity
+  Properties:
+    VehicleRentalSystem.VehicleType Type 'get ' : 
+    System.Decimal CustomerDailyRate 'get ' : 
+    VehicleRentalSystem.VehicleStatus Status 'get set' : 
+    VehicleRentalSystem.Owner OwnerInfo 'get set' : 
+    System.Decimal OwnerDailyAmount 'get set' : 
+    Int32 Seats 'get set' : 
+    Int32 Year 'get set' : 
+    System.String Fuel 'get set' : 
+    System.String Model 'get set' : 
+    System.String Brand 'get set' : 
+    System.String PlateNumber 'get set' : 
+    Int32 Id   'get set' : 
+  Methods:
+    get_Id(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_Id(Int32): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_PlateNumber(): PrivateScope, Public, HideBySig, SpecialName
+    set_PlateNumber(String): PrivateScope, Public, HideBySig, SpecialName
+    get_Brand(): PrivateScope, Public, HideBySig, SpecialName
+    set_Brand(String): PrivateScope, Public, HideBySig, SpecialName
+    get_Model(): PrivateScope, Public, HideBySig, SpecialName
+    set_Model(String): PrivateScope, Public, HideBySig, SpecialName
+    get_Fuel(): PrivateScope, Public, HideBySig, SpecialName
+    set_Fuel(String): PrivateScope, Public, HideBySig, SpecialName
+    get_Year(): PrivateScope, Public, HideBySig, SpecialName
+    set_Year(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_Seats(): PrivateScope, Public, HideBySig, SpecialName
+    set_Seats(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_OwnerDailyAmount(): PrivateScope, Public, HideBySig, SpecialName
+    set_OwnerDailyAmount(Decimal): PrivateScope, Public, HideBySig, SpecialName
+    get_OwnerInfo(): PrivateScope, Public, HideBySig, SpecialName
+    set_OwnerInfo(Owner): PrivateScope, Public, HideBySig, SpecialName
+    get_Status(): PrivateScope, Public, HideBySig, SpecialName
+    set_Status(VehicleStatus): PrivateScope, Public, HideBySig, SpecialName
+    get_CustomerDailyRate(): PrivateScope, Public, HideBySig, SpecialName
+    get_Type(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    GetDetails(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    Create(VehicleType): PrivateScope, Public, Static, HideBySig
+    ToString(): PrivateScope, Public, Virtual, HideBySig
+Class VehicleRentalSystem.Car: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :VehicleRentalSystem.Vehicle
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    VehicleRentalSystem.VehicleType Type 'get ' : 
+  Methods:
+    get_Type(): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    GetDetails(): PrivateScope, Public, Virtual, HideBySig
+Class VehicleRentalSystem.Van: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :VehicleRentalSystem.Vehicle
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    VehicleRentalSystem.VehicleType Type 'get ' : 
+  Methods:
+    get_Type(): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    GetDetails(): PrivateScope, Public, Virtual, HideBySig
+Class VehicleRentalSystem.Suv: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :VehicleRentalSystem.Vehicle
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    VehicleRentalSystem.VehicleType Type 'get ' : 
+  Methods:
+    get_Type(): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    GetDetails(): PrivateScope, Public, Virtual, HideBySig
+Class VehicleRentalSystem.Bike: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :VehicleRentalSystem.Vehicle
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    VehicleRentalSystem.VehicleType Type 'get ' : 
+  Methods:
+    get_Type(): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    GetDetails(): PrivateScope, Public, Virtual, HideBySig
+Class VehicleRentalSystem.Bus: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :VehicleRentalSystem.Vehicle
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    VehicleRentalSystem.VehicleType Type 'get ' : 
+  Methods:
+    get_Type(): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    GetDetails(): PrivateScope, Public, Virtual, HideBySig
+Class VehicleRentalSystem.BookingService: AutoLayout, AnsiClass, Class, Public, Abstract, Sealed, BeforeFieldInit
+  Properties:
+    System.Decimal MinAdvancePercent 'get ' : 
+  Methods:
+    get_MinAdvancePercent(): PrivateScope, Public, Static, HideBySig, SpecialName
+    CountDays(DateTime, DateTime): PrivateScope, Public, Static, HideBySig
+    MinAdvance(Decimal): PrivateScope, Public, Static, HideBySig
+    IsVehicleFree(Vehicle, DateTime, DateTime): PrivateScope, Public, Static, HideBySig
+    GetAvailableVehicles(Boolean(HasFieldMarshal), VehicleType, Int32, DateTime, DateTime): PrivateScope, Public, Static, HideBySig
+    GetAvailableDrivers(DateTime): PrivateScope, Public, Static, HideBySig
+    CreateBooking(Customer, Vehicle, Driver, DateTime, DateTime, Decimal, Boolean(HasFieldMarshal)): PrivateScope, Public, Static, HideBySig
+    CompleteBooking(Booking): PrivateScope, Public, Static, HideBySig
+Interface VehicleRentalSystem.IRepository`1[T]: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract, BeforeFieldInit
+  Type parameter: T, VehicleRentalSystem.IEntity
+  Methods:
+    Add(T): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    Update(T): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    Remove(Int32): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    GetById(Int32): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    GetAll(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+Class VehicleRentalSystem.DbConfig: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.String Server : Public
+    Int32 Port : Public
+    System.String Database : Public
+    System.String User : Public
+    System.String Password : Public
+  Methods:
+    FilePath(): PrivateScope, Public, Static, HideBySig
+    Load(): PrivateScope, Public, Static, HideBySig
+    Save(): PrivateScope, Public, HideBySig
+    ConnectionString(Boolean(HasFieldMarshal)): PrivateScope, Public, HideBySig
+Class VehicleRentalSystem.Db: AutoLayout, AnsiClass, Class, Public, Abstract, Sealed, BeforeFieldInit
+  Properties:
+    VehicleRentalSystem.IRepository`1[VehicleRentalSystem.Booking] Bookings 'get ' : 
+    VehicleRentalSystem.IRepository`1[VehicleRentalSystem.Driver] Drivers 'get ' : 
+    VehicleRentalSystem.IRepository`1[VehicleRentalSystem.Vehicle] Vehicles 'get ' : 
+  Methods:
+    get_Vehicles(): PrivateScope, Public, Static, HideBySig, SpecialName
+    get_Drivers(): PrivateScope, Public, Static, HideBySig, SpecialName
+    get_Bookings(): PrivateScope, Public, Static, HideBySig, SpecialName
+    Initialize(): PrivateScope, Public, Static, HideBySig
+    Open(): PrivateScope, Public, Static, HideBySig
+    Command(MySqlConnection, String): PrivateScope, Public, Static, HideBySig
+    Param(MySqlCommand, String, Object): PrivateScope, Public, Static, HideBySig
+    Execute(MySqlConnection, String): PrivateScope, Public, Static, HideBySig
+Class VehicleRentalSystem.VehicleNotAvailableException: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Exception
+    Void .ctor(System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class VehicleRentalSystem.VehicleRepository: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    VehicleRentalSystem.IRepository`1[VehicleRentalSystem.Vehicle]
+  Methods:
+    Add(Vehicle): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    Update(Vehicle): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    Remove(Int32): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    GetById(Int32): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    GetAll(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+Class VehicleRentalSystem.DriverRepository: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    VehicleRentalSystem.IRepository`1[VehicleRentalSystem.Driver]
+  Methods:
+    Add(Driver): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    Update(Driver): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    Remove(Int32): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    GetById(Int32): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    GetAll(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+Class VehicleRentalSystem.BookingRepository: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    VehicleRentalSystem.IRepository`1[VehicleRentalSystem.Booking]
+  Methods:
+    Add(Booking): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    Update(Booking): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    Remove(Int32): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    GetById(Int32): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    GetAll(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+Class VehicleRentalSystem.SampleData: AutoLayout, AnsiClass, Class, Public, Abstract, Sealed, BeforeFieldInit
+  Methods:
+    Seed(): PrivateScope, Public, Static, HideBySig
+Class VehicleRentalSystem.DashboardSummary: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    System.Decimal CompanyProfit 'get set' : 
+    System.Decimal OwnerPayable 'get set' : 
+    System.Decimal TotalIncome 'get set' : 
+    Int32 RentedVehicles 'get set' : 
+    Int32 AvailableVehicles 'get set' : 
+    Int32 TotalVehicles 'get set' : 
+  Methods:
+    get_TotalVehicles(): PrivateScope, Public, HideBySig, SpecialName
+    set_TotalVehicles(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_AvailableVehicles(): PrivateScope, Public, HideBySig, SpecialName
+    set_AvailableVehicles(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_RentedVehicles(): PrivateScope, Public, HideBySig, SpecialName
+    set_RentedVehicles(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_TotalIncome(): PrivateScope, Public, HideBySig, SpecialName
+    set_TotalIncome(Decimal): PrivateScope, Public, HideBySig, SpecialName
+    get_OwnerPayable(): PrivateScope, Public, HideBySig, SpecialName
+    set_OwnerPayable(Decimal): PrivateScope, Public, HideBySig, SpecialName
+    get_CompanyProfit(): PrivateScope, Public, HideBySig, SpecialName
+    set_CompanyProfit(Decimal): PrivateScope, Public, HideBySig, SpecialName
+Class VehicleRentalSystem.VehicleIncomeRow: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    System.Decimal CompanyProfit 'get set' : 
+    System.Decimal OwnerPayable 'get set' : 
+    System.Decimal Income 'get set' : 
+    Int32 Rentals 'get set' : 
+    System.String Owner 'get set' : 
+    System.String Vehicle 'get set' : 
+  Methods:
+    get_Vehicle(): PrivateScope, Public, HideBySig, SpecialName
+    set_Vehicle(String): PrivateScope, Public, HideBySig, SpecialName
+    get_Owner(): PrivateScope, Public, HideBySig, SpecialName
+    set_Owner(String): PrivateScope, Public, HideBySig, SpecialName
+    get_Rentals(): PrivateScope, Public, HideBySig, SpecialName
+    set_Rentals(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_Income(): PrivateScope, Public, HideBySig, SpecialName
+    set_Income(Decimal): PrivateScope, Public, HideBySig, SpecialName
+    get_OwnerPayable(): PrivateScope, Public, HideBySig, SpecialName
+    set_OwnerPayable(Decimal): PrivateScope, Public, HideBySig, SpecialName
+    get_CompanyProfit(): PrivateScope, Public, HideBySig, SpecialName
+    set_CompanyProfit(Decimal): PrivateScope, Public, HideBySig, SpecialName
+Class VehicleRentalSystem.ReportService: AutoLayout, AnsiClass, Class, Public, Abstract, Sealed, BeforeFieldInit
+  Methods:
+    GetSummary(): PrivateScope, Public, Static, HideBySig
+    GetVehicleIncome(): PrivateScope, Public, Static, HideBySig
+    GetActiveBookings(): PrivateScope, Public, Static, HideBySig
+Class VehicleRentalSystem.ListItem: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(System.String, System.Object): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.String Text : Public
+    System.Object Value : Public
+  Methods:
+    ToString(): PrivateScope, Public, Virtual, HideBySig
+Class VehicleRentalSystem.UiTheme: AutoLayout, AnsiClass, Class, Public, Abstract, Sealed, BeforeFieldInit
+  Properties:
+    System.Drawing.Font Title 'get ' : 
+    System.Drawing.Font Bold 'get ' : 
+    System.Drawing.Font Regular 'get ' : 
+    System.Drawing.Color RowAlt 'get ' : 
+    System.Drawing.Color Muted 'get ' : 
+    System.Drawing.Color Danger 'get ' : 
+    System.Drawing.Color Background 'get ' : 
+    System.Drawing.Color Accent 'get ' : 
+    System.Drawing.Color Primary 'get ' : 
+  Methods:
+    get_Primary(): PrivateScope, Public, Static, HideBySig, SpecialName
+    get_Accent(): PrivateScope, Public, Static, HideBySig, SpecialName
+    get_Background(): PrivateScope, Public, Static, HideBySig, SpecialName
+    get_Danger(): PrivateScope, Public, Static, HideBySig, SpecialName
+    get_Muted(): PrivateScope, Public, Static, HideBySig, SpecialName
+    get_RowAlt(): PrivateScope, Public, Static, HideBySig, SpecialName
+    get_Regular(): PrivateScope, Public, Static, HideBySig, SpecialName
+    get_Bold(): PrivateScope, Public, Static, HideBySig, SpecialName
+    get_Title(): PrivateScope, Public, Static, HideBySig, SpecialName
+    Money(Decimal): PrivateScope, Public, Static, HideBySig
+    MakeButton(String, Color, Int32): PrivateScope, Public, Static, HideBySig
+    MakeLabel(String, Boolean(HasFieldMarshal)): PrivateScope, Public, Static, HideBySig
+    StyleGrid(DataGridView): PrivateScope, Public, Static, HideBySig
+    FieldTable(): PrivateScope, Public, Static, HideBySig
+    AddHeading(TableLayoutPanel, String): PrivateScope, Public, Static, HideBySig
+    AddField(TableLayoutPanel, String, Control): PrivateScope, Public, Static, HideBySig
+    AddWide(TableLayoutPanel, Control): PrivateScope, Public, Static, HideBySig
+    MakeMoneyBox(Int32, Int32): PrivateScope, Public, Static, HideBySig
+    MakeCard(): PrivateScope, Public, Static, HideBySig
+    Info(IWin32Window, String): PrivateScope, Public, Static, HideBySig
+    Warn(IWin32Window, String): PrivateScope, Public, Static, HideBySig
+    Confirm(IWin32Window, String): PrivateScope, Public, Static, HideBySig
+Class VehicleRentalSystem.DbSettingsForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    ShowMessage(String): PrivateScope, Public, HideBySig
+Class VehicleRentalSystem.AuthService: AutoLayout, AnsiClass, Class, Public, Abstract, Sealed, BeforeFieldInit
+  Properties:
+    System.String AdminPassword 'get ' : 
+    System.String AdminUser 'get ' : 
+  Methods:
+    get_AdminUser(): PrivateScope, Public, Static, HideBySig, SpecialName
+    get_AdminPassword(): PrivateScope, Public, Static, HideBySig, SpecialName
+    Login(String, String): PrivateScope, Public, Static, HideBySig
+Class VehicleRentalSystem.LoginForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class VehicleRentalSystem.VehicleForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class VehicleRentalSystem.DriverForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class VehicleRentalSystem.ReceiptForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(VehicleRentalSystem.Booking): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class VehicleRentalSystem.HireForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class VehicleRentalSystem.BarChartPanel: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Panel
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.String ChartTitle : Public
+    System.Collections.Generic.List`1[System.String] Labels : Public
+    System.Collections.Generic.List`1[System.Decimal] Values : Public
+Class VehicleRentalSystem.DashboardForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class VehicleRentalSystem.MainForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
